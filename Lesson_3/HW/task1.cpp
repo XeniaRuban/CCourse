@@ -19,8 +19,9 @@ int main()
 	printf(" Enter c\n");
 	scanf_s("%f", &c);
 	d = sqrtf((4 * a * c) - (b * b));
-	x1 = (- b + d) / (2 * a);
-	x2 = (- b - d) / (2 * a);
+	printf("%f\n", d);
+	x1 = (-b + d) / (2 * a);
+	x2 = (-b - d) / (2 * a);
 	printf("x1 = %f\n", x1);
 	printf("x2 = %f\n", x2);
 	return 0;
