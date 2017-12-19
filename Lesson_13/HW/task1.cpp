@@ -35,13 +35,20 @@ int main()
 		while (fgets(buffer, BUFFER_SIZE, file) != NULL) {
 			printf("%s", buffer);
 
-			float distance(float x, float y);
-	struct point point;
+
+	            struct point point;
 			{
 				point.x = atof(buffer);
 				point.y = atof(buffer);
 			}			
+				float distance(float x, float y);
+			float x0, y0 = 0;
+			printf("X0 = ");
+			scanf("%d", &x0);
 			
+			printf("Y0 = ");
+			scanf("%d", &y0);
+
 		}
 	}
 
