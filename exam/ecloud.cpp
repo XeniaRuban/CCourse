@@ -21,10 +21,10 @@ int main()
 		{
 			X = X + 0.1;
 			printf("X: %f\n", X);
-			Y = sqrt(R*R - (X - X0)*(X - X0)) + Y0;
+			Y = sqrtf(R*R - (X - X0)*(X - X0)) + Y0;
 			printf("Y: %f\n", Y);
 			printf("X: %f\n", X);
-			Y = - sqrt(R*R - (X - X0)*(X - X0)) + Y0;
+			Y = - sqrtf(R*R - (X - X0)*(X - X0)) + Y0;
 			printf("Y: %f\n", Y);
 		}
 		X = X0 + R;
