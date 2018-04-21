@@ -150,12 +150,27 @@ int main()
 	{
 		while (fgets(buffer, BUFFER_SIZE, file) != NULL) {
 			printf("%s \n", buffer);
+		
+			for (int i = 0; i < BUFFER_SIZE; i++)
 			{
+				if (buffer[i] == '\n')
+					printf("New string\n");
+
+				if (buffer[i] == ' ') 
+					printf("New element\n");
+
+				if (buffer[i] >= '0' && buffer[i] <= '9')
+					printf("This is number\n");
+
+
+			}
+	/*		{
 				if ('*'||'/'||'+'||'-')
 				{
 					'???';
 				}
 			}
+	*/		
 		}
 		printList(head);
 
