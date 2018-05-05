@@ -142,12 +142,19 @@ void SortTree(Node *root, const char *dir, int level) {
 	}
 }
 
-void LevelTree(Node *root, const char *dir, int level) {
+int LevelTree(Node *root, int level) {
+	int LeftLevel = 0;
+	int RightLevel = 0;
 	if (root) {
-		LevelTree(root->left, "left", level + 1);
-		LevelTree(root->right, "right", level + 1);
+		LeftLevel = LevelTree(root->left, level + 1);
+		RightLevel = LevelTree(root->right, level + 1);
 		printf("%d\n", level);
 	}
+	if (level < LeftLevel)
+		return LeftLevel;
+	if (level < RightLevel)
+		return RightLevel;
+	return level;
 }
 
 int main()
@@ -164,9 +171,8 @@ int main()
 	printTree(root, "root", 0);
 	printf("max = %d\n", getMaxNode(root)->data);
 	printf("parent of 11 is %d\n", getNodeByValue(root, 11)->parent->data);
-	printf("Sorted Tree:\n");
 	SortTree(root, "root", 0);
-	printf("Max level: ");
-	LevelTree(root, "root", 0);
+	printf("Sorted Tree:\n");
+	printf("Max level: %d \n", LevelTree(root, 0));
 	return 0;
 }
